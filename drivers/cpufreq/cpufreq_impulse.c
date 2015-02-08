@@ -162,7 +162,7 @@ static void cpufreq_impulse_timer_resched(unsigned long cpu)
 
 	spin_lock_irqsave(&pcpu->load_lock, flags);
 	pcpu->time_in_idle =
-		get_cpu_idle_time_us(smp_processor_id(),
+		get_cpu_idle_time(smp_processor_id(),
 				  &pcpu->time_in_idle_timestamp);
 	pcpu->cputime_speedadj = 0;
 	pcpu->cputime_speedadj_timestamp = pcpu->time_in_idle_timestamp;
