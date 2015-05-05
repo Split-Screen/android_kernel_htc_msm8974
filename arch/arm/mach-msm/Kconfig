@@ -3063,6 +3063,12 @@ config MSM_CPU_PWRCTL
 	  stand alone power collapse operation. Selecting this option
 	  ensures that they are always off.
 
+config ENABLE_21_AMP
+	bool "Enable Charging to 2.1A"
+	default n
+	help
+		Allow Charging up to 2.1A (in fast charge too)
+
 config FORCE_FAST_CHARGE
 	bool "Increase input current limit when charging via USB"
 	default y

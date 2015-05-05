@@ -257,6 +257,10 @@
 #define USB_MA_300     (300)
 #define USB_MA_400     (400)
 #define USB_MA_500     (500)
+#define USB_MA_600     (600)
+#define USB_MA_700     (700)
+#define USB_MA_800     (800)
+#define USB_MA_900     (900)
 #define USB_MA_1000    (1000)
 #define USB_MA_1100    (1100)
 #define USB_MA_1300    (1300)
@@ -264,6 +268,12 @@
 #define USB_MA_1500	(1500)
 #define USB_MA_1600	(1600)
 #define USB_MA_1700	(1700)
+#ifdef CONFIG_ENABLE_21_AMP
+#define USB_MA_1800	(1800)
+#define USB_MA_1900	(1900)
+#define USB_MA_2000	(2000)
+#define USB_MA_2100	(2100)
+#endif
 
 #define VIN_MIN_4400_MV	4400
 #define POWER_BANK_DROP_DURATION_MS	4000
@@ -2901,7 +2911,11 @@ struct usb_ma_limit_entry {
 
 static struct usb_ma_limit_entry usb_ma_table[] = {
 	{100},
+	{200},
+	{300},
+	{400},
 	{500},
+	{600},
 	{700},
 	{800},
 	{900},
@@ -2913,6 +2927,12 @@ static struct usb_ma_limit_entry usb_ma_table[] = {
 	{1500},
 	{1600},
 	{1700},
+#ifdef CONFIG_ENABLE_21_AMP
+	{1800},
+	{1900},
+	{2000},
+	{2100},
+#endif
 };
 
 static int find_usb_ma_value(int value)
