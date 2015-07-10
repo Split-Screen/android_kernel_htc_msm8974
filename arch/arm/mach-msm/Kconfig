@@ -3091,11 +3091,11 @@ config ENABLE_21_AMP
 		Allow Charging up to 2.1A (in fast charge too)
 
 config FORCE_FAST_CHARGE
-	bool "Increase input current limit when charging via USB"
+	bool "Increase input current limit to 1100mA when charging via USB"
 	default y
 	help
-	  A simple sysfs interface to increase input current limit
-	  when charging via USB.
+	  A simple sysfs interface to increase input current limit to
+	  1100mA when charging via USB.
 
 config MSM_UARTDM_Core_v14
 	bool "Use MSM BLSP based HSUART Core v1.4"

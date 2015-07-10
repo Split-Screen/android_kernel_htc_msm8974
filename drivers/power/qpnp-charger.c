@@ -3829,51 +3829,11 @@ int pm8941_set_pwrsrc_and_charger_enable(enum htc_power_source_type src,
 	case HTC_PWR_SOURCE_TYPE_DETECTING:
 	case HTC_PWR_SOURCE_TYPE_UNKNOWN_USB:
 	case HTC_PWR_SOURCE_TYPE_USB:
-#ifdef CONFIG_FORCE_FAST_CHARGE
-		if (force_fast_charge == 1)
+		if (force_fast_charge)
 			mA = USB_MA_1100;
-		else if (force_fast_charge == 2) {
-			switch (fast_charge_level) {
-				case FAST_CHARGE_500:
-					mA = USB_MA_500;
-					break;
-				case FAST_CHARGE_700:
-					mA = USB_MA_700;
-					break;
-				case FAST_CHARGE_900:
-					mA = USB_MA_900;
-					break;
-				case FAST_CHARGE_1100:
-					mA = USB_MA_1100;
-					break;
-				case FAST_CHARGE_1300:
-					mA = USB_MA_1300;
-					break;
-				case FAST_CHARGE_1500:
-					mA = USB_MA_1500;
-					break;
-				case FAST_CHARGE_1700:
-					mA = USB_MA_1700;
-					break;
-#ifdef CONFIG_ENABLE_21_AMP
-				case FAST_CHARGE_1900:
-					mA = USB_MA_1900;
-					break;
-				case FAST_CHARGE_2100:
-					mA = USB_MA_2100;
-					break;
-#endif
-				default:
-					break;
-			}
-		}
 		else
 			mA = USB_MA_500;
 		break;
-#else
-		mA=USB_MA_500
-		break
-#endif
 	case HTC_PWR_SOURCE_TYPE_AC:
 	case HTC_PWR_SOURCE_TYPE_9VAC:
 	case HTC_PWR_SOURCE_TYPE_MHL_AC:
