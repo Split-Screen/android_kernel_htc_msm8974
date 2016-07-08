@@ -1,5 +1,5 @@
 [gerrit]
-host=review.gerrithub.io
+host=review.pac-rom.com
 port=29418
-project=Team-M8/android_kernel_htc_msm8974.git
-defaultbranch=M
+project=android_kernel_htc_msm8974.git
+defaultbranch=pac-6.0
